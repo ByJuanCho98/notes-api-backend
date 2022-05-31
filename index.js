@@ -94,7 +94,8 @@ app.use((req, resp) => {
   })
 })
 
-const PORT = 3001
+const PORT = process.env.PORT || 3001
+// https://intense-wildwood-93811.herokuapp.com/
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
