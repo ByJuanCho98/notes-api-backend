@@ -15,6 +15,10 @@ mongoose.connect(connectionString/* , {
     console.log(err)
   })
 
+process.on('uncaughtException', () => {
+  mongoose.connection.disconnect()
+})
+
 //* read db
 /* Note.find()
   .then(result => {
